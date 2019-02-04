@@ -1,111 +1,94 @@
-var btnOneNum=0;
-var btnTwoNum=0;
-var btnThreeNum=0;
-var btnFourNum=0;
+// Values
+var crystOne=0;
+var crystTwo=0;
+var crystThree=0;
+var crystFour=0;
 var wins=0;
-var losses=0;
-var targetNum=0;
-var currentNum=0;
+var loss=0;
+var goalPrice=0;
+var currentBalance=0;
 
-    // Reset and Display
+    // Reset
     function reset(){
         
-        btnOneNum=Math.floor(Math.random() * 12 + 1);
-        btnTwoNum=Math.floor(Math.random() * 12 + 1);
-        btnThreeNum=Math.floor(Math.random() * 12 + 1);
-        btnFourNum=Math.floor(Math.random() * 12 + 1);
+        //Set all Crystals to Random Value
+        crystOne=Math.floor(Math.random() * 12 + 1);
+        crystTwo=Math.floor(Math.random() * 12 + 1);
+        crystThree=Math.floor(Math.random() * 12 + 1);
+        crystFour=Math.floor(Math.random() * 12 + 1);
         
-        if (btnTwoNum===btnOneNum){
-            while (btnTwoNum===btnOneNum){
-                btnTwoNum=Math.floor(Math.random() * 12 + 1);  
+        // If the first two values are the same number, then reset the second crystal to a new value
+        if (crystOne===crystTwo){
+                CrystTwo=Math.floor(Math.random() * 12 + 1);  
                 }
-        } if (btnThreeNum==btnOneNum||btnTwoNum==btnThreeNum){
-            while (btnThreeNum==btnOneNum||btnTwoNum==btnThreeNum){
-                btnThreeNum=Math.floor(Math.random() * 12 + 1);  
+        // If the third crystal is the same value as the first or second crystal,  reset it's value
+        if (crystThree===crystOne||crystThree===crystTwo){
+                crystThree=Math.floor(Math.random() * 12 + 1);  
                 }
-        } if (btnFourNum===btnOneNum||btnTwoNum===btnFourNum||btnFourNum===btnThreeNum){
-            while(btnFourNum===btnOneNum||btnTwoNum===btnFourNum||btnFourNum===btnThreeNum){
-                btnFourNum=Math.floor(Math.random() * 12 + 1); 
-                }
+        // Reset fourth Crystal if it's value matches any previous
+        if (crystFour===crystOne||crystFour===crystTwo||crystFour===crystThree){
+                crystFour=Math.floor(Math.random() * 12 + 1); 
         }
+        
 
-        console.log(btnOneNum);
-        console.log(btnTwoNum);
-        console.log(btnThreeNum);
-        console.log(btnFourNum);
+        console.log(crystOne);
+        console.log(crystTwo);
+        console.log(crystThree);
+        console.log(crystFour);
 
-        targetNum=Math.floor(Math.random() * 101 + 19);
-        currentNum=0;
-        $("#targetNumber").text(targetNum);
-        $("#scoreBox").text(currentNum);
-        $("#winLoss").text("Wins : "+wins+" || Losses: "+losses);
+        goalPrice=Math.floor(Math.random() * 101 + 19);
+        currentBalance=0;
+        $("#targetNumber").text(goalPrice);
+        $("#scoreBox").text(currentBalance);
+        $("#winLoss").text("Wins : "+wins+" || Losses: "+loss);
     }
     reset();
 
-    // Functions for Button Clicks
+    // Functions for Button Clicks still need to be fixed 
+    /*
     $("#btnOne").click(function(){
         $(this).finish();
-        shake(this);
-        currentNum+=btnOneNum;
-        $("#scoreBox").text(currentNum);
+        currentBalance+=crystOne;
+        $("#scoreBox").text(currentBalance);
        
     });
 
     $("#btnTwo").click(function(){
         $(this).finish();
-        shake(this);
-        currentNum+=btnTwoNum;
-        $("#scoreBox").text(currentNum);
+        currentBalance+=crystTwo;
+        $("#scoreBox").text(currentBalance);
        
     });
 
     $("#btnThree").click(function(){
         $(this).finish();
-        shake(this);
-        currentNum+=btnThreeNum;
-        $("#scoreBox").text(currentNum);
+        currentBalance+=crystThree;
+        $("#scoreBox").text(currentBalance);
        
     });
 
     $("#btnFour").click(function(){
         $(this).finish();
-        shake(this);
-        currentNum+=btnFourNum;
-        $("#scoreBox").text(currentNum);      
+        currentBalance+=crystFour;
+        $("#scoreBox").text(currentBalance);      
        
     });
-
+    */
     // win/loss detector tied to the crystal button class
     $(".crystalBtn").click(function(){
-        if (currentNum===targetNum){
+        if (currentBalance===goalPrice){
             wins ++;
-            Materialize.toast("You escaped with your haul!", 3500);
+            alert("You win!");
             reset();
 
-        }  else if (currentNum>targetNum){
-            losses++;
-            Materialize.toast("Lost in the cavern...", 3500);
+        }  else if (currentBalance>goalPrice){
+            loss++;
+            alert("You Lose...");
             reset();
 
         }  
     });
-        
-    // makes buttons wiggle when clicked
-    // courtesy of  https://jsfiddle.net/macloo/g39k3h3e/
-
-    function shake(thing) {
-        var interval = 60;
-        var distance = 10;
-        var times = 4;
-      
-        for (var i = 0; i < (times + 1); i++) {
-          $(thing).animate({
-            left:
-              (i % 2 == 0 ? distance : distance * -1)
-          }, interval);
-        }
-        $(thing).animate({
-          left: 0,
-          top: 0
-        }, interval);
-    }
+    
+    console.log(goalPrice)
+    console.log(currentBalance)
+    

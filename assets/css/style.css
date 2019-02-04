@@ -1,8 +1,19 @@
 body {
     background-color:lightyellow;
+    text-align:center;
+    font-family:"Courier New";
+}
+
+#infoRow {
+    height: 100px;
+    background-color: #ffff;
 }
 
 .crystalBtn, .sideImg {
     width: 200px;
     height: auto;
+}
+
+p {
+    font-weight: bold;
 }
