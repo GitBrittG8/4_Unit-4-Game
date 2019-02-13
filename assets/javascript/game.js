@@ -39,3 +39,7 @@ currentBalance=0;                                           // Reset
 console.log(goalPrice + " is the Goal Price");
 console.log(currentBalance + " is the current balance");
 console.log("Hurray!");
+
+$(".crystal-image").on("click", function() {
+        alert("You clicked a crystal!");
+    });
