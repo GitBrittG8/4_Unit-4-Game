@@ -1,20 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
     <title>Crystal Collector Game</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="assets/javascript/game.js"></script>
+    
 </head>
 
 <body>
@@ -26,12 +20,12 @@
         </div>
 
 
-        <div class="row" id="instruct">
+        <div class="row">
             <div class="col-md-3">
-                <img src="assets/images/goldminer.png" class="sideImg" alt="Gold Miner observing a find">
+                <img src="assets/images/goldminer.png" class="minerPic" alt="Gold Miner observing a find">
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6" id="instructions-text">
                 <p>You are given an hidden goal of profit to strive for.</p>
                 <p>Each crystal contains a different and unknown price.</p>
                 <p>Click on a crystal to add it's value to your collection.</p>
@@ -43,51 +37,54 @@
             </div>
 
             <div class="col-md-3">
-                <img src="assets/images/career-lab-gemologist.gif" class="sideImg" alt="Turning Gem">
-                <img src="assets/images/Careers-Trader-210x135.jpg" class="sideImg" alt="Turning Gem">
+                <img src="assets/images/career-lab-gemologist.gif" class="sideImg" id="lab-img" alt="Gemologist Microscope">
+                <img src="assets/images/Careers-Trader-210x135.jpg" class="sideImg" id="gems-img" alt="Assortment of cut gems">
             </div>
         </div>
 
-        <div class="row" id="infoRow">
-            
+        <div class="row" id="num-row">
             <div class="col-md-4">
-            <h3 class="labelBox">Target Number</h3>
-            <h2 id="targetNumber"></h2>
+            <h3 id="goal-div">Goal Price</h3>
             </div>
             
             <div class="col-md-4">
-            <h3 class="labelBox">Current Total</h3>
-            <h2 id="scoreBox"></h2>
+            <h3 id="balance-div">Current Total</h3>
             </div>
             
             <div class="col-md-4">
-            <h3 class="labelBox">Score</h3>
-            <h2 id="winLoss"></h2>
-
+            <h3 id="stats-div">Score</h3>
             </div>
-
         </div>
 
 
-        <div id="buttonRow" class="row">
+        <div class="row">
             <div class="col-md-3">
-                <input type="image" class="crystalBtn" id="btnOne" src="assets/images/emerald.jpg" alt="Crystal One"/>
+            <img class="crystal-image" src="assets/images/emerald.jpg" alt="Crystal One"/>
             </div>
 
             <div class="col-md-3">
-                <input type="image" class="crystalBtn" id="btnTwo" src="assets/images/Geschliffener_blauer_Saphir.jpg" alt="Crystal Two"/>
+            <img class="crystal-image" src="assets/images/Geschliffener_blauer_Saphir.jpg" alt="Crystal Two"/>
             </div>
 
             <div class="col-md-3">
-                <input type="image" class="crystalBtn" id="btnThree" src="assets/images/Rose_Emerald.jpg" alt="Crystal Three"/>
+            <img class="crystal-image" src="assets/images/Rose_Emerald.jpg" alt="Crystal Three"/>
             </div>
 
             <div class="col-md-3">
-                <input type="image" class="crystalBtn" id="btnFour" src="assets/images/tourmaline.jpg" alt="Crystal Four"/>
+            <img class="crystal-image" src="assets/images/tourmaline.jpg" alt="Crystal Four"/>
             </div>
         </div>
     
     </div>    
 </div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(".crystal-image").on("click", function() {
+    alert("You clicked a crystal!");
+});
+</script>
+
 </body>
 </html>

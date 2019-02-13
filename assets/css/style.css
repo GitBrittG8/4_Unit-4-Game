@@ -1,18 +1,28 @@
 body {
-    background-color:lightyellow;
+    background: url("../images/large.jpg");
     text-align:center;
     font-family:"Courier New";
 }
 
-#infoRow {
-    height: 100px;
+#instructions-text, #num-row {
     background-color: #ffff;
 }
 
-.crystalBtn, .sideImg {
+.crystal-image, .sideImg {
     width: 200px;
     height: auto;
+    border-style: solid;
+    border-width:8px;  
 }
+
+.minerPic{
+    width:250px;
+    height:auto;
+}
+
+#lab-img {border-color: #8e4a72;}
+#gems-img {border-color: #6b244d;}
+.crystal-image {border-color: #461f33;}
 
 p {
     font-weight: bold;
