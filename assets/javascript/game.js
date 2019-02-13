@@ -40,6 +40,11 @@ console.log(goalPrice + " is the Goal Price");
 console.log(currentBalance + " is the current balance");
 console.log("Hurray!");
 
+$("#goal-price").text(goalPrice)                              //Price in html
+
+var counter = 0;
 $(".crystal-image").on("click", function() {
-        alert("You clicked a crystal!");
-    });
+        counter += 10;
+        alert("Counter is: " + counter);
+        console.log(counter + " is the counter value")
+});
