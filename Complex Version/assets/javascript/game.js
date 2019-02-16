@@ -8,6 +8,15 @@ var loss=0;
 var goalPrice=Math.floor(Math.random() * 10 + 19);
 var currentBalance=0;
 
+function reset() {
+        crystOne=Math.floor(Math.random() * 12 + 1);
+        crystTwo=Math.floor(Math.random() * 12 + 1);
+        crystThree=Math.floor(Math.random() * 12 + 1);
+        crystFour=Math.floor(Math.random() * 12 + 1);
+        goalPrice=Math.floor(Math.random() * 10 + 19);
+        currentBalance=0;
+};
+
 
 if (crystOne===crystTwo){                               
         CrystTwo=Math.floor(Math.random() * 12 + 1);  // If first two values are equal, reset 2nd crystal
@@ -28,10 +37,12 @@ console.log(currentBalance + " is the current balance");
 console.log("Hurray!");
 
 var crystalValue = 5;
+
+
                                         
 $(".crystal-image").on("click", function() {             // When crystal is clicked...  
 
-                                                        // Find the id of the crystal
+        //This section still in the works                // Find the id of the crystal
                                                         // Grab the numerical value from that spec id
 
         //var crystalValue = ($(this).class("crystal-image")); // Grabs correct crystal value
@@ -41,11 +52,13 @@ $(".crystal-image").on("click", function() {             // When crystal is clic
 
         if (currentBalance === goalPrice) {                     // Display win/loss
                 alert("You win!");
-                ++ wins;
+                ++ wins;                                        
+                reset();                                        // Reset stats
         }
         if (currentBalance > goalPrice) {
                 alert("You lose!");
                 ++ loss;
+                reset();
         }
 
         $("#goal-price").text(goalPrice);                         // Place stats in html

@@ -1,7 +1,7 @@
 body {
     background: url("../images/large.jpg");
-    background-size: cover;
-    background-repeat: no repeat;
+    background-size: 30%;
+    background-repeat: repeat;
     text-align: center;
     font-family:"Courier New";
 }

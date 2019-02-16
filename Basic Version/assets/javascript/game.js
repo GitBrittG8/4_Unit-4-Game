@@ -10,7 +10,7 @@ for (var i = 0; i < numberArray.length; i++) {
         var crystalImg = $("<img>");
 
         crystalImg.addClass("crystal-image");
-        crystalImg.attr('src', '../assets/images/Geschliffener_blauer_Saphir.jpg');
+        crystalImg.attr('src', 'https://www.publicdomainpictures.net/pictures/200000/nahled/crystal-ball-14785248289ya.jpg');
         crystalImg.attr("data-crystalvalue", numberArray[i]);  // Add data attribute, set it equal to the array value.
         $("#crystals").append(crystalImg); // image added to the page
 }
